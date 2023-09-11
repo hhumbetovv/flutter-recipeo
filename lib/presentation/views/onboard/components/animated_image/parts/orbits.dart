@@ -16,7 +16,6 @@ class _OrbitsState extends State<Orbits> {
   final double radius = 160.0;
   bool isCallBackExecuted = false;
 
-  calculateSizeAndPosition() {}
   late final RenderBox renderBox;
   late double centerX;
   late double centerY;

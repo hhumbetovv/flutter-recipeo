@@ -27,11 +27,11 @@ class BaseInputDecoration extends InputDecoration {
           contentPadding: const EdgeInsets.symmetric(vertical: 16, horizontal: 24),
           isDense: true,
           suffixIconColor: AppColors.secondaryText,
-          border: _inputBorder(AppColors.outline),
-          enabledBorder: _inputBorder(AppColors.outline),
-          focusedBorder: _inputBorder(AppColors.primary, 2),
+          border: hasError ? _inputBorder(AppColors.secondary, 2) : _inputBorder(AppColors.outline),
+          enabledBorder: hasError ? _inputBorder(AppColors.secondary, 2) : _inputBorder(AppColors.outline),
+          focusedBorder: hasError ? _inputBorder(AppColors.secondary, 2) : _inputBorder(AppColors.primary, 2),
           errorBorder: _inputBorder(AppColors.secondary, 2),
-          focusColor: AppColors.primary,
+          focusColor: hasError ? AppColors.secondary : AppColors.primary,
           suffixIcon: suffixIcon,
           prefixIcon: prefixIconPath != null
               ? Padding(

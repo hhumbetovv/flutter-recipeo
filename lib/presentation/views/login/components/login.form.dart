@@ -8,11 +8,15 @@ class LoginForm extends StatelessWidget {
     required this.loginFormKey,
     required this.emailController,
     required this.passwordController,
+    required this.emailHasError,
+    required this.passwordHasError,
   }) : super(key: key);
 
   final GlobalKey<FormState> loginFormKey;
   final TextEditingController emailController;
   final TextEditingController passwordController;
+  final bool emailHasError;
+  final bool passwordHasError;
 
   @override
   Widget build(BuildContext context) {
@@ -21,9 +25,15 @@ class LoginForm extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
-          EmailField(emailController: emailController),
+          EmailField(
+            emailController: emailController,
+            hasError: emailHasError,
+          ),
           const SizedBox(height: 16),
-          PasswordField(passwordController: passwordController),
+          PasswordField(
+            passwordController: passwordController,
+            hasError: passwordHasError,
+          ),
           // SizedBox(height: 24),
           // Text(TextManager.forgotPassword, style: AppTypography.bodyMedium)
         ],

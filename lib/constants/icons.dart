@@ -2,6 +2,9 @@ enum AppIcons {
   lock('lock'),
   check('check'),
   google('google'),
+  close('close'),
+  home('home'),
+  profile('profile'),
   message('message');
 
   const AppIcons(this._name);

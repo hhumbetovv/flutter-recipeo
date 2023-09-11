@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "598919195808",
+    "project_id": "flutter-recipeo",
+    "storage_bucket": "flutter-recipeo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:598919195808:android:27a45129be8e8d01a0edc5",
+        "android_client_info": {
+          "package_name": "com.example.flutter_recipeo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "598919195808-ljjbgg46n38jslfmjrq8acedvl5sj85l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7gIpRvBjyJ7MlgVB9o2_DwoSPRar92yQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "598919195808-ljjbgg46n38jslfmjrq8acedvl5sj85l.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "598919195808-8n9punhhdbgb1v6rh422qlll372vc4h4.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.flutterRecipeo"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

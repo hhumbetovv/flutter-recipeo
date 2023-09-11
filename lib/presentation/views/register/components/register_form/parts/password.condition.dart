@@ -1,4 +1,4 @@
-part of '../sign.up.form.dart';
+part of '../register.form.dart';
 
 class _PasswordCondition extends StatelessWidget {
   const _PasswordCondition({

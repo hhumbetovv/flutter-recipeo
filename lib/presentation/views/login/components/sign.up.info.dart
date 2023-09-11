@@ -20,7 +20,7 @@ class SignUpInfo extends StatelessWidget {
         const SizedBox(width: 8),
         AppInkWell(
           onTap: () {
-            context.push(Routes.signUp);
+            context.push(Routes.register);
           },
           child: Text(
             TextManager.signUp,

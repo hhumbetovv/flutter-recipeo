@@ -17,15 +17,15 @@ class AnimatedImage extends StatefulWidget {
 
 class _AnimatedImageState extends State<AnimatedImage> with TickerProviderStateMixin {
   final GlobalKey centerKey = GlobalKey();
-  late final AnimationController _controller;
+  late final AnimationController controller = AnimationController(
+    vsync: this,
+    duration: const Duration(seconds: 20),
+  )..repeat();
 
   @override
-  void initState() {
-    super.initState();
-    _controller = AnimationController(
-      vsync: this,
-      duration: const Duration(seconds: 20),
-    )..repeat(); // Sonsuz döngü için animasyonu tekrarlatır.
+  void dispose() {
+    controller.dispose();
+    super.dispose();
   }
 
   @override
@@ -49,7 +49,7 @@ class _AnimatedImageState extends State<AnimatedImage> with TickerProviderStateM
             ),
           ),
           RotationTransition(
-            turns: _controller,
+            turns: controller,
             child: Orbits(centerKey: centerKey),
           ),
         ],

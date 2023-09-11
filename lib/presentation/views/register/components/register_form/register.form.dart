@@ -9,52 +9,46 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 part 'parts/password.condition.dart';
 
-class SignUpForm extends StatefulWidget {
-  const SignUpForm({
+class RegisterForm extends StatelessWidget {
+  const RegisterForm({
     Key? key,
-    required this.signUpFormKey,
+    required this.registerFormKey,
     required this.emailController,
     required this.passwordController,
   }) : super(key: key);
 
-  final GlobalKey<FormState> signUpFormKey;
+  final GlobalKey<FormState> registerFormKey;
   final TextEditingController emailController;
   final TextEditingController passwordController;
 
   @override
-  State<SignUpForm> createState() => _SignUpFormState();
-}
-
-class _SignUpFormState extends State<SignUpForm> {
-  final List<Condition> conditions = [
-    Condition(
-      label: TextManager.lengthCondition,
-      check: (String value) => value.length > 6,
-    ),
-    Condition(
-      label: TextManager.containsNumber,
-      check: (String value) => value.contains(RegExp(r'[0-9]')),
-    ),
-    Condition(
-      label: TextManager.containsLetter,
-      check: (String value) => value.contains(RegExp(r'[a-zA-Z]')),
-    ),
-  ];
-
-  @override
   Widget build(BuildContext context) {
+    final List<Condition> conditions = [
+      Condition(
+        label: TextManager.lengthCondition,
+        check: (String value) => value.length > 6,
+      ),
+      Condition(
+        label: TextManager.containsNumber,
+        check: (String value) => value.contains(RegExp(r'[0-9]')),
+      ),
+      Condition(
+        label: TextManager.containsLetter,
+        check: (String value) => value.contains(RegExp(r'[a-zA-Z]')),
+      ),
+    ];
     return Form(
-      key: widget.signUpFormKey,
+      key: registerFormKey,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          EmailField(emailController: widget.emailController),
+          EmailField(
+            emailController: emailController,
+          ),
           const SizedBox(height: 16),
           PasswordField(
-            passwordController: widget.passwordController,
-            onValidate: (value) {
-              setState(() {});
-            },
+            passwordController: passwordController,
+            onValidate: (value) {},
           ),
           const SizedBox(height: 24),
           const Text(TextManager.passwordMust, style: AppTypography.bodyLarge),
@@ -62,7 +56,7 @@ class _SignUpFormState extends State<SignUpForm> {
             const SizedBox(height: 16),
             _PasswordCondition(
               condition: conditions[i].label,
-              isPassed: conditions[i].check(widget.passwordController.text),
+              isPassed: conditions[i].check(passwordController.text),
             ),
           ],
         ],

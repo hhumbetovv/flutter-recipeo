@@ -1,6 +1,11 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_recipeo/presentation/router/home.branch.dart';
+import 'package:flutter_recipeo/presentation/router/transitions.dart';
+import 'package:flutter_recipeo/presentation/router/upload.branch.dart';
+import 'package:flutter_recipeo/presentation/views/create_profile/create.profile.view.dart';
 import 'package:flutter_recipeo/presentation/views/login/login.view.dart';
-import 'package:flutter_recipeo/presentation/views/sign_up/sign.up.view.dart';
+import 'package:flutter_recipeo/presentation/views/main_wrapper/main.wrapper.view.dart';
+import 'package:flutter_recipeo/presentation/views/register/register.view.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../constants/routes.dart';
@@ -11,7 +16,7 @@ class AppRouter {
   static final GlobalKey<NavigatorState> _rootKey = GlobalKey<NavigatorState>();
 
   static final GoRouter router = GoRouter(
-    initialLocation: Routes.onboard,
+    initialLocation: Routes.splash,
     navigatorKey: _rootKey,
     routes: [
       GoRoute(
@@ -20,34 +25,31 @@ class AppRouter {
       ),
       GoRoute(
         path: Routes.onboard,
-        builder: (context, state) => const OnBoardView(),
         pageBuilder: (context, state) => CupertinoTransition(const OnBoardView()),
       ),
       GoRoute(
         path: Routes.login,
-        builder: (context, state) => const LoginView(),
         pageBuilder: (context, state) => CupertinoTransition(const LoginView()),
       ),
       GoRoute(
-        path: Routes.signUp,
-        builder: (context, state) => const SignUpView(),
-        pageBuilder: (context, state) => CupertinoTransition(const SignUpView()),
+        path: Routes.register,
+        pageBuilder: (context, state) => CupertinoTransition(const RegisterView()),
       ),
+      GoRoute(
+        path: Routes.createProfile,
+        pageBuilder: (context, state) => CupertinoTransition(const CreateProfileView()),
+      ),
+      StatefulShellRoute.indexedStack(
+        pageBuilder: (context, state, navigationShell) {
+          return CupertinoTransition(
+            MainWrapper(navigationShell: navigationShell),
+          );
+        },
+        branches: [
+          HomeBranch(),
+          ProfileBranch(),
+        ],
+      )
     ],
   );
-}
-
-class CupertinoTransition extends CustomTransitionPage {
-  CupertinoTransition(passedChild)
-      : super(
-          child: passedChild,
-          transitionsBuilder: (context, animation, secondaryAnimation, child) {
-            return CupertinoPageTransition(
-              primaryRouteAnimation: animation,
-              secondaryRouteAnimation: secondaryAnimation,
-              linearTransition: false,
-              child: child,
-            );
-          },
-        );
 }

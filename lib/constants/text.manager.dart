@@ -8,6 +8,7 @@ sealed class TextManager {
   static const String welcomeBack = 'Welcome Back!';
   static const String enterAccount = 'Please enter your account here';
   static const String emailFieldHint = 'Enter your email';
+  static const String nameFieldHint = 'Enter your display name';
   static const String passwordFieldHint = 'Enter your password';
   static const String forgotPassword = 'Forgot password?';
   static const String dontHaveAccount = 'Don\'t have any account?';
@@ -18,4 +19,14 @@ sealed class TextManager {
   static const String lengthCondition = 'atleast 6 characters';
   static const String containsNumber = 'contains a number';
   static const String containsLetter = 'contains a letter';
+  static const String usedEmail = 'This e-mail is already in use';
+  static const String emailNotFound = 'There is no account for this e-mail';
+  static const String wrongPassword = 'Password entered is incorrect';
+  static const String errorOccured = 'Some error occured';
+  static const String done = 'Done';
+  static const String completeProfile = 'Let\'s complete your profile';
+  static const String profileInfo = 'Your display name and profile picture will be open to the public';
+  static const String chooseImageSource = 'Choose Image Source';
+  static const String home = 'Home';
+  static const String profile = 'Profile';
 }
