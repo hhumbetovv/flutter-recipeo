@@ -1,7 +1,7 @@
-part of '../animated.image.dart';
+part of '../animated_image.dart';
 
-class Orbits extends StatefulWidget {
-  const Orbits({
+class _Orbits extends StatefulWidget {
+  const _Orbits({
     Key? key,
     required this.centerKey,
   }) : super(key: key);
@@ -9,10 +9,10 @@ class Orbits extends StatefulWidget {
   final GlobalKey centerKey;
 
   @override
-  State<Orbits> createState() => _OrbitsState();
+  State<_Orbits> createState() => __OrbitsState();
 }
 
-class _OrbitsState extends State<Orbits> {
+class __OrbitsState extends State<_Orbits> {
   final double radius = 160.0;
   bool isCallBackExecuted = false;
 

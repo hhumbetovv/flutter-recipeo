@@ -6,4 +6,5 @@ sealed class Routes {
   static const String createProfile = '/createProfile';
   static const String home = '/home';
   static const String profile = '/profile';
+  static const String createPost = '/createPost';
 }

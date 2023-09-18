@@ -1,6 +1,6 @@
 part of 'splash.view.dart';
 
-sealed class SplashState extends State<SplashView> {
+sealed class _SplashState extends State<SplashView> {
   Color linearBegin = Colors.white;
   final Color linearEnd = Colors.white;
 

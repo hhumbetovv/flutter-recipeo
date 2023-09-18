@@ -15,3 +15,21 @@ class CupertinoTransition extends CustomTransitionPage {
           },
         );
 }
+
+class DownToUpTransition extends CustomTransitionPage {
+  DownToUpTransition(passedChild)
+      : super(
+          child: passedChild,
+          transitionsBuilder: (context, animation, secondaryAnimation, child) {
+            return SlideTransition(
+              position: animation.drive(
+                Tween(
+                  begin: const Offset(0.0, 1.0),
+                  end: Offset.zero,
+                ).chain(CurveTween(curve: Curves.ease)),
+              ),
+              child: child,
+            );
+          },
+        );
+}

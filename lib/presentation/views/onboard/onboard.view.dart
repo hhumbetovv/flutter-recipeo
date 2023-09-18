@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_recipeo/constants/colors.dart';
 import 'package:flutter_recipeo/constants/routes.dart';
-import 'package:flutter_recipeo/constants/text.manager.dart';
+import 'package:flutter_recipeo/constants/text_manager.dart';
 import 'package:flutter_recipeo/constants/typography.dart';
-import 'package:flutter_recipeo/presentation/global/buttons/primary_button/primary.button.dart';
+import 'package:flutter_recipeo/presentation/global/buttons/primary_button/primary_button.dart';
 import 'package:go_router/go_router.dart';
 
-import 'components/animated_image/animated.image.dart';
+import 'components/animated_image/animated_image.dart';
 
 class OnBoardView extends StatelessWidget {
   const OnBoardView({

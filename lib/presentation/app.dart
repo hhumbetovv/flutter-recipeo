@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_recipeo/constants/colors.dart';
 
-import '../constants/text.manager.dart';
-import 'router/app.router.dart';
+import '../constants/text_manager.dart';
+import 'router/app_router.dart';
 
 class RecipeoApp extends StatelessWidget {
   const RecipeoApp({
@@ -18,8 +19,13 @@ class RecipeoApp extends StatelessWidget {
     return MaterialApp.router(
       title: TextManager.appTitle,
       theme: ThemeData(
+        appBarTheme: const AppBarTheme(
+          backgroundColor: AppColors.white,
+          elevation: 0,
+        ),
         fontFamily: 'Inter',
         splashFactory: InkSparkle.splashFactory,
+        scaffoldBackgroundColor: AppColors.white,
       ),
       debugShowCheckedModeBanner: false,
       routerConfig: AppRouter.router,

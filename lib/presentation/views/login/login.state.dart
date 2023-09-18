@@ -1,6 +1,6 @@
 part of 'login.view.dart';
 
-sealed class LoginState extends State<LoginView> with LoadingState {
+sealed class _LoginState extends State<LoginView> with LoadingState {
   final GlobalKey<FormState> loginFormKey = GlobalKey<FormState>();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();

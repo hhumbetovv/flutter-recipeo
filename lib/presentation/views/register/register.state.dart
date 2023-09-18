@@ -1,6 +1,6 @@
 part of 'register.view.dart';
 
-sealed class RegisterState extends State<RegisterView> with LoadingState {
+sealed class _RegisterState extends State<RegisterView> with LoadingState {
   final GlobalKey<FormState> registerFormKey = GlobalKey<FormState>();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();

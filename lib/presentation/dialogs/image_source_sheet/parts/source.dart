@@ -1,4 +1,4 @@
-part of '../image.source.sheet.dart';
+part of '../image_source_sheet.dart';
 
 class _Source extends StatelessWidget {
   const _Source({

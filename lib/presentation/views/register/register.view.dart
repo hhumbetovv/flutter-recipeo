@@ -2,15 +2,15 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_recipeo/constants/colors.dart';
 import 'package:flutter_recipeo/constants/routes.dart';
-import 'package:flutter_recipeo/constants/text.manager.dart';
+import 'package:flutter_recipeo/constants/text_manager.dart';
 import 'package:flutter_recipeo/constants/typography.dart';
-import 'package:flutter_recipeo/data/failures/auth_failures.dart';
+import 'package:flutter_recipeo/data/failures/firebase_failures.dart';
 import 'package:flutter_recipeo/data/services/auth.service.dart';
 import 'package:flutter_recipeo/locator.dart';
 import 'package:flutter_recipeo/mixins/loading.state.dart';
-import 'package:flutter_recipeo/presentation/dialogs/app.snackbar.dart';
-import 'package:flutter_recipeo/presentation/global/buttons/primary_button/primary.button.dart';
-import 'package:flutter_recipeo/presentation/views/register/components/register_form/register.form.dart';
+import 'package:flutter_recipeo/presentation/dialogs/app_snackbar.dart';
+import 'package:flutter_recipeo/presentation/global/buttons/primary_button/primary_button.dart';
+import 'package:flutter_recipeo/presentation/views/register/components/register_form/register_form.dart';
 import 'package:go_router/go_router.dart';
 
 part 'register.state.dart';
@@ -24,7 +24,7 @@ class RegisterView extends StatefulWidget {
   State<RegisterView> createState() => _RegisterViewState();
 }
 
-class _RegisterViewState extends RegisterState {
+class _RegisterViewState extends _RegisterState {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

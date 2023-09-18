@@ -5,6 +5,7 @@ enum AppIcons {
   close('close'),
   home('home'),
   profile('profile'),
+  image('image'),
   message('message');
 
   const AppIcons(this._name);

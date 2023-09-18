@@ -2,16 +2,16 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_recipeo/constants/colors.dart';
 import 'package:flutter_recipeo/constants/routes.dart';
-import 'package:flutter_recipeo/constants/text.manager.dart';
+import 'package:flutter_recipeo/constants/text_manager.dart';
 import 'package:flutter_recipeo/constants/typography.dart';
-import 'package:flutter_recipeo/data/failures/auth_failures.dart';
+import 'package:flutter_recipeo/data/failures/firebase_failures.dart';
 import 'package:flutter_recipeo/data/services/auth.service.dart';
 import 'package:flutter_recipeo/locator.dart';
 import 'package:flutter_recipeo/mixins/loading.state.dart';
-import 'package:flutter_recipeo/presentation/dialogs/app.snackbar.dart';
-import 'package:flutter_recipeo/presentation/global/buttons/primary_button/primary.button.dart';
-import 'package:flutter_recipeo/presentation/views/login/components/login.form.dart';
-import 'package:flutter_recipeo/presentation/views/login/components/sign.up.info.dart';
+import 'package:flutter_recipeo/presentation/dialogs/app_snackbar.dart';
+import 'package:flutter_recipeo/presentation/global/buttons/primary_button/primary_button.dart';
+import 'package:flutter_recipeo/presentation/views/login/components/login_form.dart';
+import 'package:flutter_recipeo/presentation/views/login/components/sign_up_info.dart';
 import 'package:go_router/go_router.dart';
 
 part 'login.state.dart';
@@ -25,7 +25,7 @@ class LoginView extends StatefulWidget {
   State<LoginView> createState() => _LoginViewState();
 }
 
-class _LoginViewState extends LoginState {
+class _LoginViewState extends _LoginState {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

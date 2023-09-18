@@ -1,0 +1,4 @@
+enum FoodType {
+  food,
+  drink,
+}

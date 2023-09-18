@@ -10,4 +10,5 @@ sealed class AppColors {
   static const Color outline = Color(0xFFD0DBEA);
   static const Color form = Color(0xFFF4F5F7);
   static const Color white = Color(0xFFFFFFFF);
+  static Color shadow = const Color(0xFF0046CF).withOpacity(0.03);
 }

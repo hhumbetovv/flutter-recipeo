@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter_recipeo/data/models/user.model.dart';
+import 'package:flutter_recipeo/data/models/user_model.dart';
 
 class UserService {
   final CollectionReference _usersCollection = FirebaseFirestore.instance.collection('users');
