@@ -25,6 +25,7 @@ sealed class TextManager {
   static const String errorOccured = 'Some error occured';
   static const String next = 'Next';
   static const String done = 'Done';
+  static const String back = 'Back';
   static const String completeProfile = 'Let\'s complete your profile';
   static const String profileInfo = 'Your display name and profile picture will be open to the public';
   static const String chooseImageSource = 'Choose Image Source';
@@ -33,14 +34,22 @@ sealed class TextManager {
   static const String cancel = 'Cancel';
   static const String addCoverPhoto = 'Add Cover Photo';
   static const String foodName = 'Food Name';
+  static const String drinkName = 'Drink Name';
   static const String enterFoodName = 'Enter food name';
+  static const String enterDrinkName = 'Enter drink name';
   static const String description = 'Description';
   static const String foodDescriptionHint = 'Tell a little about your food';
+  static const String drinkDescriptionHint = 'Tell a little about your drink';
   static const String cookingDuration = 'Cooking Duration';
   static const String inMinutes = '(in minutes)';
   static const String postImageError = 'Image field can\'t be empty';
   static const String foodNameError = 'Food name can\'t be empty';
   static const String drinkNameError = 'Drink name can\'t be empty';
   static const String food = 'Food';
-  static const String drink = 'drink';
+  static const String drink = 'Drink';
+  static const String ingredients = 'Ingredients';
+  static const String enterIngredient = 'Enter ingredient';
+  static const String camera = 'Camera';
+  static const String gallery = 'Gallery';
+  static const String steps = 'Steps';
 }

@@ -18,22 +18,24 @@ Future<ImageSource?> showImageSourceSheet(BuildContext context) async {
       borderRadius: BorderRadius.circular(32),
     ),
     builder: (context) {
-      return const Padding(
-        padding: EdgeInsets.symmetric(horizontal: 24, vertical: 32),
+      return Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 32),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            _TopRow(),
-            SizedBox(height: 32),
+            const _TopRow(),
+            const SizedBox(height: 32),
             Row(
               children: [
                 _Source(
-                  icon: Icons.camera_alt_outlined,
+                  label: TextManager.camera,
+                  iconPath: AppIcons.camera.path,
                   source: ImageSource.camera,
                 ),
-                SizedBox(width: 16),
+                const SizedBox(width: 16),
                 _Source(
-                  icon: Icons.image_outlined,
+                  label: TextManager.gallery,
+                  iconPath: AppIcons.gallery.path,
                   source: ImageSource.gallery,
                 ),
               ],

@@ -5,8 +5,8 @@ import 'package:flutter_recipeo/presentation/router/transitions.dart';
 import 'package:flutter_recipeo/presentation/views/create_post/create_post.view.dart';
 import 'package:flutter_recipeo/presentation/views/create_profile/create_profile.view.dart';
 import 'package:flutter_recipeo/presentation/views/login/login.view.dart';
-import 'package:flutter_recipeo/presentation/views/main_wrapper/main_wrapper.dart';
 import 'package:flutter_recipeo/presentation/views/register/register.view.dart';
+import 'package:flutter_recipeo/presentation/wrappers/main_wrapper.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../constants/routes.dart';
@@ -41,6 +41,7 @@ class AppRouter {
         pageBuilder: (context, state) => CupertinoTransition(const CreateProfileView()),
       ),
       StatefulShellRoute.indexedStack(
+        parentNavigatorKey: _rootNavigatorKey,
         builder: (context, state, navigationShell) => MainWrapper(navigationShell: navigationShell),
         branches: [
           HomeBranch(),
@@ -51,7 +52,7 @@ class AppRouter {
         parentNavigatorKey: _rootNavigatorKey,
         path: Routes.createPost,
         pageBuilder: (context, state) => DownToUpTransition(const CreatePostView()),
-      )
+      ),
     ],
   );
 }

@@ -35,7 +35,11 @@ class PrimaryButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: onPressed,
         style: _ButtonStyle(_isOutlined, isCollabsed),
-        child: Text(text, style: _TextStyle(_isOutlined, onPressed == null)),
+        child: Text(
+          text,
+          style: _TextStyle(_isOutlined, onPressed == null),
+          overflow: TextOverflow.ellipsis,
+        ),
       ),
     );
   }

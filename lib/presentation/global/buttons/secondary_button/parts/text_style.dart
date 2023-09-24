@@ -7,6 +7,6 @@ class _TextStyle extends TextStyle {
           fontSize: 15,
           height: 1.2,
           fontWeight: FontWeight.w700,
-          color: isDisabled ? AppColors.secondaryText : AppColors.mainText,
+          color: isDisabled ? AppColors.secondaryText : AppColors.main,
         );
 }

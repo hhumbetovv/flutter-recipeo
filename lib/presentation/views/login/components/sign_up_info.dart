@@ -16,7 +16,12 @@ class SignUpInfo extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const Text(TextManager.dontHaveAccount, style: AppTypography.bodyMedium),
+        Text(
+          TextManager.dontHaveAccount,
+          style: AppTypography.bodyMedium.copyWith(
+            color: AppColors.mainText,
+          ),
+        ),
         const SizedBox(width: 8),
         AppInkWell(
           onTap: () {

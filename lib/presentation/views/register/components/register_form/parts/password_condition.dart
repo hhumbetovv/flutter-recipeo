@@ -35,7 +35,7 @@ class _PasswordCondition extends StatelessWidget {
         Text(
           condition,
           style: AppTypography.bodyMedium.copyWith(
-            color: isPassed ? AppColors.mainText : AppColors.secondaryText,
+            color: isPassed ? AppColors.main : AppColors.secondaryText,
           ),
         )
       ],

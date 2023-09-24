@@ -20,6 +20,8 @@ class BaseInputDecoration extends InputDecoration {
     bool hasError = false,
     Widget? suffixIcon,
   }) : super(
+          fillColor: AppColors.white,
+          filled: true,
           errorStyle: const TextStyle(height: 0.01, fontSize: 0),
           errorMaxLines: 1,
           hintText: hintText,

@@ -3,11 +3,13 @@ part of '../image_source_sheet.dart';
 class _Source extends StatelessWidget {
   const _Source({
     Key? key,
-    required this.icon,
+    required this.label,
+    required this.iconPath,
     required this.source,
   }) : super(key: key);
 
-  final IconData icon;
+  final String label;
+  final String iconPath;
   final ImageSource source;
 
   @override
@@ -21,17 +23,22 @@ class _Source extends StatelessWidget {
           },
           child: Container(
             decoration: BoxDecoration(
-              border: Border.all(color: AppColors.outline),
+              border: Border.all(
+                color: AppColors.outline,
+                width: 2,
+              ),
               borderRadius: BorderRadius.circular(16),
             ),
-            child: FractionallySizedBox(
-              heightFactor: 0.4,
-              child: FittedBox(
-                child: Icon(
-                  icon,
-                  color: AppColors.mainText,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SvgPicture.asset(iconPath),
+                const SizedBox(height: 8),
+                Text(
+                  label,
+                  style: AppTypography.headerSmall,
                 ),
-              ),
+              ],
             ),
           ),
         ),
