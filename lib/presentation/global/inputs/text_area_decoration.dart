@@ -16,6 +16,8 @@ class TextAreaDecoration extends InputDecoration {
   TextAreaDecoration({
     String? hintText,
   }) : super(
+          fillColor: AppColors.white,
+          filled: true,
           errorStyle: const TextStyle(height: 0.01, fontSize: 0),
           errorMaxLines: 1,
           hintText: hintText,

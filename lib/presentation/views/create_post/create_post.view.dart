@@ -23,7 +23,6 @@ class _CreatePostViewState extends _CreatePostState {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const SizedBox(height: 12),
             const ActionRow(),
             Expanded(
               child: PageView(

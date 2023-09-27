@@ -13,30 +13,36 @@ class _NextButton extends StatelessWidget {
     return Expanded(
       child: BlocBuilder<CreatePostCubit, CreatePostState>(
         buildWhen: (previous, current) {
-          return previous.foodName != current.foodName || previous.postImage != current.postImage;
+          return previous.foodName != current.foodName ||
+              previous.postImage != current.postImage ||
+              previous.pageIndex != current.pageIndex;
         },
         builder: (context, state) {
           return PrimaryButton(
-            onPressed: () {
-              if (context.read<CreatePostCubit>().checkNavigation()) {
-                context.read<CreatePostCubit>().setPageIndex(1);
-                controller.nextPage(
-                  duration: const Duration(milliseconds: 300),
-                  curve: Curves.easeInOut,
-                );
-              } else {
-                if (state.foodName.trim().isEmpty) {
-                  showAppSnackBar(
-                    context,
-                    state.foodType == FoodType.food ? TextManager.foodNameError : TextManager.drinkNameError,
-                  );
+            onPressed: () async {
+              if (state.pageIndex == 0) {
+                if (context.read<CreatePostCubit>().checkNavigation()) {
+                  context.read<CreatePostCubit>().setPageIndex(1);
+                  controller.nextPage(duration: const Duration(milliseconds: 300), curve: Curves.easeInOut);
+                } else {
+                  if (state.foodName.trim().isEmpty) {
+                    showAppSnackBar(
+                      context,
+                      state.foodType == FoodType.food ? TextManager.foodNameError : TextManager.drinkNameError,
+                    );
+                  }
+                  if (state.postImage == null) showAppSnackBar(context, TextManager.postImageError);
                 }
-                if (state.postImage == null) {
-                  showAppSnackBar(context, TextManager.postImageError);
+              } else {
+                try {
+                  await context.read<CreatePostCubit>().uploadPost();
+                  if (context.mounted) showPostUploadSuccess(context);
+                } catch (e) {
+                  if (context.mounted) showAppSnackBar(context, e.toString());
                 }
               }
             },
-            text: 'Next',
+            text: state.pageIndex == 0 ? TextManager.next : TextManager.done,
           );
         },
       ),

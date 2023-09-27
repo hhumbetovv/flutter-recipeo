@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_recipeo/constants/colors.dart';
-import 'package:flutter_recipeo/constants/text_manager.dart';
-import 'package:flutter_recipeo/constants/typography.dart';
-import 'package:flutter_recipeo/presentation/views/create_post/pages/create_post_second_page/components/add_ingredient_button.dart';
-import 'package:flutter_recipeo/presentation/views/create_post/pages/create_post_second_page/components/ingredient_list/ingredient_list.dart';
+import 'package:flutter_recipeo/presentation/views/create_post/pages/create_post_second_page/components/ingredients_container/ingredients_container.dart';
+import 'package:flutter_recipeo/presentation/views/create_post/pages/create_post_second_page/components/steps_container/steps_container.dart';
 
 class CreatePostSecondPage extends StatelessWidget {
   const CreatePostSecondPage({
@@ -19,22 +16,9 @@ class CreatePostSecondPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: 45),
-            Text(
-              TextManager.ingredients,
-              style: AppTypography.headerMedium,
-            ),
-            SizedBox(height: 26),
-            IngredientList(),
-            SizedBox(height: 8),
-            AddIngredientButton(),
+            IngredientsContainer(),
             SizedBox(height: 24),
-            Divider(color: AppColors.form, thickness: 8),
-            SizedBox(height: 24),
-            Text(
-              TextManager.steps,
-              style: AppTypography.headerMedium,
-            ),
+            StepsContainer(),
           ],
         ),
       ),

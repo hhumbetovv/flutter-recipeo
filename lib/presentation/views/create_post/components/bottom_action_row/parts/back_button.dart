@@ -27,10 +27,7 @@ class _BackButton extends StatelessWidget {
               child: SecondaryButton(
                 onPressed: () {
                   context.read<CreatePostCubit>().setPageIndex(0);
-                  controller.previousPage(
-                    duration: const Duration(milliseconds: 300),
-                    curve: Curves.easeInOut,
-                  );
+                  controller.previousPage(duration: const Duration(milliseconds: 300), curve: Curves.easeInOut);
                 },
                 text: TextManager.back,
               ),

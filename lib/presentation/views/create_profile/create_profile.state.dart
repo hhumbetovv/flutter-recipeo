@@ -28,7 +28,7 @@ sealed class _CreateProfileState extends State<CreateProfileView> with LoadingSt
       UserService userService = locator<UserService>();
       StorageService storageService = locator<StorageService>();
       //! Get uid
-      final String uid = authService.currentUser!.uid;
+      final String uid = authService.currentUserId!;
       //! Get Image
       String? imageUrl;
       if (image != null) {
@@ -37,9 +37,10 @@ sealed class _CreateProfileState extends State<CreateProfileView> with LoadingSt
       }
       //! Create User
       final UserModel user = UserModel(
-        uid: authService.currentUser!.uid,
+        uid: authService.currentUserId!,
         displayName: displayName,
         image: imageUrl,
+        posts: [],
       );
       //! Upload User
       await userService.createUser(user: user);

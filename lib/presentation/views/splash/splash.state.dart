@@ -22,12 +22,12 @@ sealed class _SplashState extends State<SplashView> {
 
   void _checkAuth() async {
     AuthService authService = locator<AuthService>();
-    UserModel? user = authService.currentUser;
-    if (user == null && mounted) {
+    String? userId = authService.currentUserId;
+    if (userId == null && mounted) {
       context.go(Routes.onboard);
     } else if (await authService.isFirstRun && mounted) {
       context.go(Routes.createProfile);
     }
-    if (user != null) context.go(Routes.home);
+    if (userId != null) context.go(Routes.home);
   }
 }

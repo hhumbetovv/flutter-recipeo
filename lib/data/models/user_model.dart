@@ -6,11 +6,13 @@ part 'user_model.g.dart';
 class UserModel {
   final String uid;
   final String? displayName, image;
+  final List<String> posts;
 
   UserModel({
     required this.uid,
     this.displayName,
     this.image,
+    required this.posts,
   });
   Map<String, dynamic> toJson() => _$UserModelToJson(this);
 

@@ -1,19 +1,18 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter_recipeo/data/models/user_model.dart';
 // import 'package:google_sign_in/google_sign_in.dart';
 
 class AuthService {
   final FirebaseAuth _service = FirebaseAuth.instance;
   CollectionReference users = FirebaseFirestore.instance.collection('users');
 
-  UserModel? get currentUser {
+  String? get currentUserId {
     User? user = _service.currentUser;
-    return user != null ? UserModel(uid: user.uid) : null;
+    return user?.uid;
   }
 
   Future<bool> get isFirstRun async {
-    DocumentSnapshot userdoc = await users.doc(currentUser?.uid).get();
+    DocumentSnapshot userdoc = await users.doc(currentUserId).get();
     if (userdoc.exists) return false;
     return true;
   }

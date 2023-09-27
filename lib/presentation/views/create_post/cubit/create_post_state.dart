@@ -39,6 +39,7 @@ class CreatePostState extends Equatable {
         pageIndex,
         foodDescription,
         ingredients,
+        steps,
       ];
 
   CreatePostState copyWith({

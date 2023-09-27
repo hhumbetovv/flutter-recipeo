@@ -48,8 +48,14 @@ sealed class TextManager {
   static const String food = 'Food';
   static const String drink = 'Drink';
   static const String ingredients = 'Ingredients';
+  static const String ingredient = 'Ingredient';
   static const String enterIngredient = 'Enter ingredient';
   static const String camera = 'Camera';
   static const String gallery = 'Gallery';
   static const String steps = 'Steps';
+  static const String step = 'Step';
+  static const String enterStep = 'Enter step';
+  static const String uploadSuccess = 'Upload Success';
+  static const String uploadSuccessInfo = 'Your recipe has been uploaded, you can see it on your profile';
+  static const String backToHome = 'Back to Home';
 }

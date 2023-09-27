@@ -1,17 +1,7 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_recipeo/constants/colors.dart';
-import 'package:flutter_recipeo/constants/icons.dart';
-import 'package:flutter_recipeo/constants/text_manager.dart';
-import 'package:flutter_recipeo/presentation/global/app_ink_well.dart';
-import 'package:flutter_recipeo/presentation/global/inputs/base_decoration.dart';
-import 'package:flutter_recipeo/presentation/views/create_post/cubit/create_post_cubit.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+part of '../ingredients_container.dart';
 
-part 'parts/ingredient.dart';
-
-class IngredientList extends StatelessWidget {
-  const IngredientList({
+class _List extends StatelessWidget {
+  const _List({
     Key? key,
   }) : super(key: key);
 
@@ -29,21 +19,10 @@ class IngredientList extends StatelessWidget {
     );
   }
 
-  bool checkEquality<T>(List<T> list1, List<T> list2) {
-    if (list1.length != list2.length) {
-      return false;
-    }
-
-    final set1 = Set<T>.from(list1);
-    final set2 = Set<T>.from(list2);
-
-    return set1.length == set2.length && set1.containsAll(set2);
-  }
-
   bool buildWhen(CreatePostState previous, CreatePostState current) {
     final List<String> previousList = previous.ingredients.map((e) => e.value).toList();
     final List<String> currentList = current.ingredients.map((e) => e.value).toList();
-    return previousList.length != currentList.length || checkEquality(previousList, currentList);
+    return previousList.length != currentList.length || ListUtils.checkEquality(previousList, currentList);
   }
 
   @override
@@ -57,7 +36,7 @@ class IngredientList extends StatelessWidget {
           proxyDecorator: proxyDecorator,
           children: [
             for (int index = 0; index < state.ingredients.length; index++)
-              Ingredient(
+              _ListItem(
                 key: ObjectKey(state.ingredients[index].key),
                 ingredient: state.ingredients[index].value,
                 index: index,
@@ -65,7 +44,7 @@ class IngredientList extends StatelessWidget {
               ),
           ],
           onReorder: (oldIndex, newIndex) {
-            context.read<CreatePostCubit>().reorderIngredient(oldIndex, newIndex);
+            context.read<CreatePostCubit>().reorderElement<IngredientModel>(oldIndex, newIndex);
           },
         );
       },
