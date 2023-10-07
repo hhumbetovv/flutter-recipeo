@@ -35,8 +35,8 @@ class _NextButton extends StatelessWidget {
                 }
               } else {
                 try {
+                  showUploadPostDialog(context);
                   await context.read<CreatePostCubit>().uploadPost();
-                  if (context.mounted) showPostUploadSuccess(context);
                 } catch (e) {
                   if (context.mounted) showAppSnackBar(context, e.toString());
                 }

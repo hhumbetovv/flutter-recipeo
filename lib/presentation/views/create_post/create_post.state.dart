@@ -12,7 +12,6 @@ sealed class _CreatePostState extends State<CreatePostView> {
   @override
   void dispose() {
     controller.dispose();
-    // context.read<CreatePostCubit>().dispose();
     super.dispose();
   }
 }

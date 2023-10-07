@@ -1,19 +1,11 @@
-import 'dart:io';
-
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_recipeo/constants/cooking_duration.dart';
 import 'package:flutter_recipeo/constants/food_type.dart';
-import 'package:flutter_recipeo/data/models/post_model.dart';
 import 'package:flutter_recipeo/data/models/reordable_element_model.dart';
-import 'package:flutter_recipeo/data/models/user_model.dart';
-import 'package:flutter_recipeo/data/services/auth.service.dart';
 import 'package:flutter_recipeo/data/services/post.service.dart';
-import 'package:flutter_recipeo/data/services/storage.service.dart';
-import 'package:flutter_recipeo/data/services/user.service.dart';
 import 'package:flutter_recipeo/locator.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:uuid/uuid.dart';
 
 part 'create_post_state.dart';
 
@@ -21,6 +13,7 @@ class CreatePostCubit extends Cubit<CreatePostState> {
   CreatePostCubit()
       : super(
           CreatePostState(
+            isLoading: false,
             cookingDuration: CookingDuration.thirty,
             foodDescription: '',
             foodName: '',
@@ -142,36 +135,18 @@ class CreatePostCubit extends Cubit<CreatePostState> {
 
   Future<void> uploadPost() async {
     try {
-      AuthService authService = locator<AuthService>();
-      UserService userService = locator<UserService>();
+      emit(state.copyWith(isLoading: true));
       PostService postService = locator<PostService>();
-      StorageService storageService = locator<StorageService>();
-
-      final String id = const Uuid().v4();
-      final String imagePath = 'posts/$id.${state.postImage!.path.split(".").last}';
-      final String imageUrl = await storageService.uploadImage(File(state.postImage!.path), imagePath);
-
-      final PostModel post = PostModel(
-        id: id,
+      await postService.createPost(
         foodName: state.foodName,
         foodDescription: state.foodDescription,
-        image: imageUrl,
+        image: state.postImage!,
         type: state.foodType,
         duration: state.cookingDuration,
         ingredients: state.ingredients.map((el) => el.value).where((val) => val.isNotEmpty).toList(),
         steps: state.steps.map((el) => el.value).where((val) => val.isNotEmpty).toList(),
       );
-      await postService.createPost(post: post);
-
-      final UserModel user = await userService.getUser(uid: authService.currentUserId!);
-      await userService.updateUser(
-        user: UserModel(
-          uid: user.uid,
-          displayName: user.displayName,
-          image: user.image,
-          posts: [...user.posts, id],
-        ),
-      );
+      emit(state.copyWith(isLoading: false));
     } catch (e) {
       rethrow;
     }
@@ -180,6 +155,7 @@ class CreatePostCubit extends Cubit<CreatePostState> {
   void dispose() {
     emit(
       CreatePostState(
+        isLoading: false,
         postImage: null,
         imageError: false,
         foodType: FoodType.food,

@@ -23,27 +23,8 @@ sealed class _CreateProfileState extends State<CreateProfileView> with LoadingSt
         hasError = true;
       });
     } else {
-      //! SetUp Singletons
-      AuthService authService = locator<AuthService>();
       UserService userService = locator<UserService>();
-      StorageService storageService = locator<StorageService>();
-      //! Get uid
-      final String uid = authService.currentUserId!;
-      //! Get Image
-      String? imageUrl;
-      if (image != null) {
-        String imagePath = 'users/$uid.${image!.path.split(".").last}';
-        imageUrl = await storageService.uploadImage(File(image!.path), imagePath);
-      }
-      //! Create User
-      final UserModel user = UserModel(
-        uid: authService.currentUserId!,
-        displayName: displayName,
-        image: imageUrl,
-        posts: [],
-      );
-      //! Upload User
-      await userService.createUser(user: user);
+      await userService.createUser(displayName: displayName, image: image);
       if (mounted) context.go(Routes.home);
     }
     toggleLoading();

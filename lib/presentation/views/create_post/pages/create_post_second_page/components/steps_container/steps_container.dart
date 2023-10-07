@@ -24,15 +24,18 @@ class StepsContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        _Title(),
-        SizedBox(height: 24),
-        _List(),
-        SizedBox(height: 8),
-        _AddItemButton(),
-      ],
+    return const Padding(
+      padding: EdgeInsets.symmetric(horizontal: 24),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          _Title(),
+          SizedBox(height: 24),
+          _List(),
+          SizedBox(height: 8),
+          _AddItemButton(),
+        ],
+      ),
     );
   }
 }

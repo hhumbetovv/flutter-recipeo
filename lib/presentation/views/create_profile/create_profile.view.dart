@@ -1,13 +1,8 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_recipeo/constants/colors.dart';
 import 'package:flutter_recipeo/constants/routes.dart';
 import 'package:flutter_recipeo/constants/text_manager.dart';
 import 'package:flutter_recipeo/constants/typography.dart';
-import 'package:flutter_recipeo/data/models/user_model.dart';
-import 'package:flutter_recipeo/data/services/auth.service.dart';
-import 'package:flutter_recipeo/data/services/storage.service.dart';
 import 'package:flutter_recipeo/data/services/user.service.dart';
 import 'package:flutter_recipeo/locator.dart';
 import 'package:flutter_recipeo/mixins/loading.state.dart';

@@ -21,6 +21,7 @@ class ActionRow extends StatelessWidget {
         children: [
           AppInkWell(
             onTap: () {
+              context.read<CreatePostCubit>().dispose();
               context.pop();
             },
             child: Text(

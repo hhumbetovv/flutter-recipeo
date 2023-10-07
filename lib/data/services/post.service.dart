@@ -1,11 +1,45 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter_recipeo/constants/cooking_duration.dart';
+import 'package:flutter_recipeo/constants/food_type.dart';
 import 'package:flutter_recipeo/data/models/post_model.dart';
+import 'package:flutter_recipeo/data/services/storage.service.dart';
+import 'package:flutter_recipeo/data/services/user.service.dart';
+import 'package:flutter_recipeo/locator.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:uuid/uuid.dart';
 
 class PostService {
   final CollectionReference _postsCollection = FirebaseFirestore.instance.collection('posts');
-  Future<void> createPost({required PostModel post}) async {
+  final StorageService _storageService = locator<StorageService>();
+  final UserService _userService = locator<UserService>();
+
+  Future<void> createPost({
+    required String foodName,
+    required String foodDescription,
+    required XFile image,
+    required FoodType type,
+    required CookingDuration duration,
+    required List<String> ingredients,
+    required List<String> steps,
+  }) async {
     try {
-      _postsCollection.doc(post.id).set(post.toJson());
+      final String id = const Uuid().v4();
+      final String imageUrl = await _storageService.uploadPostImage(
+        id: id,
+        image: image,
+      );
+      final PostModel post = PostModel(
+        id: id,
+        foodName: foodName,
+        foodDescription: foodDescription,
+        image: imageUrl,
+        type: type,
+        duration: duration,
+        ingredients: ingredients,
+        steps: steps,
+      );
+      await _postsCollection.doc(id).set(post.toJson());
+      await _userService.addPost(postId: id);
     } catch (e) {
       rethrow;
     }
@@ -13,7 +47,7 @@ class PostService {
 
   Future<void> updatePost({required PostModel post}) async {
     try {
-      _postsCollection.doc(post.id).update(post.toJson());
+      await _postsCollection.doc(post.id).update(post.toJson());
     } catch (e) {
       rethrow;
     }

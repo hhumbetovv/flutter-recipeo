@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_recipeo/constants/food_type.dart';
 import 'package:flutter_recipeo/constants/text_manager.dart';
 import 'package:flutter_recipeo/presentation/dialogs/app_snackbar.dart';
-import 'package:flutter_recipeo/presentation/dialogs/post_upload_success.dart';
+import 'package:flutter_recipeo/presentation/dialogs/upload_post.dart';
 import 'package:flutter_recipeo/presentation/global/buttons/primary_button/primary_button.dart';
 import 'package:flutter_recipeo/presentation/global/buttons/secondary_button/secondary_button.dart';
 import 'package:flutter_recipeo/presentation/views/create_post/cubit/create_post_cubit.dart';

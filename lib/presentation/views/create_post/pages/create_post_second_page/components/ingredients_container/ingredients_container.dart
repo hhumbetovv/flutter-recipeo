@@ -24,16 +24,19 @@ class IngredientsContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        SizedBox(height: 33),
-        _Title(),
-        SizedBox(height: 26),
-        _List(),
-        SizedBox(height: 8),
-        _AddItemButton(),
-      ],
+    return const Padding(
+      padding: EdgeInsets.symmetric(horizontal: 24),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          SizedBox(height: 26),
+          _Title(),
+          SizedBox(height: 26),
+          _List(),
+          SizedBox(height: 8),
+          _AddItemButton(),
+        ],
+      ),
     );
   }
 }

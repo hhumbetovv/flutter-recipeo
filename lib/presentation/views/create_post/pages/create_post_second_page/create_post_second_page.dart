@@ -9,18 +9,15 @@ class CreatePostSecondPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 24),
-      child: SingleChildScrollView(
-        physics: BouncingScrollPhysics(),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            IngredientsContainer(),
-            SizedBox(height: 24),
-            StepsContainer(),
-          ],
-        ),
+    return const SingleChildScrollView(
+      physics: BouncingScrollPhysics(),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          IngredientsContainer(),
+          SizedBox(height: 24),
+          StepsContainer(),
+        ],
       ),
     );
   }

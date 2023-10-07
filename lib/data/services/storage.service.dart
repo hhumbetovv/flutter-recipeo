@@ -1,13 +1,15 @@
 import 'dart:io';
 
 import 'package:firebase_storage/firebase_storage.dart';
+import 'package:image_picker/image_picker.dart';
 
 class StorageService {
   final FirebaseStorage _storage = FirebaseStorage.instance;
 
-  Future<String> uploadImage(File image, String path) async {
+  Future<String> uploadUserImage({required String uid, required XFile image}) async {
     try {
-      final TaskSnapshot snapshot = await _storage.ref().child(path).putFile(image);
+      String imagePath = 'users/$uid.${image.path.split(".").last}';
+      final TaskSnapshot snapshot = await _storage.ref().child(imagePath).putFile(File(image.path));
       final String url = await snapshot.ref.getDownloadURL();
       return url;
     } catch (e) {
@@ -15,7 +17,18 @@ class StorageService {
     }
   }
 
-  Future<void> deleteImage(String path) async {
+  Future<String> uploadPostImage({required String id, required XFile image}) async {
+    try {
+      final String imagePath = 'posts/$id.${image.path.split(".").last}';
+      final TaskSnapshot snapshot = await _storage.ref().child(imagePath).putFile(File(image.path));
+      final String url = await snapshot.ref.getDownloadURL();
+      return url;
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  Future<void> deleteImage({required String path}) async {
     try {
       final Reference reference = _storage.ref().child(path);
       await reference.delete();

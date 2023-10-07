@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_recipeo/constants/colors.dart';
 import 'package:flutter_recipeo/constants/routes.dart';
-import 'package:flutter_recipeo/data/models/user_model.dart';
 import 'package:flutter_recipeo/data/services/auth.service.dart';
 import 'package:flutter_recipeo/locator.dart';
 import 'package:go_router/go_router.dart';

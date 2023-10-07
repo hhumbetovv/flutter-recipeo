@@ -17,4 +17,13 @@ class UserModel {
   Map<String, dynamic> toJson() => _$UserModelToJson(this);
 
   factory UserModel.fromJson(Map<String, dynamic> json) => _$UserModelFromJson(json);
+
+  UserModel copyWithNewPost({required String id}) {
+    return UserModel(
+      uid: uid,
+      displayName: displayName,
+      image: image,
+      posts: [...posts, id],
+    );
+  }
 }
