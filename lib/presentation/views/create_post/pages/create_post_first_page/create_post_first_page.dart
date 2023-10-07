@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_recipeo/constants/text_manager.dart';
-import 'package:flutter_recipeo/constants/typography.dart';
-import 'package:flutter_recipeo/presentation/views/create_post/pages/create_post_first_page/components/duration_slider/duration_slider_container.dart';
-import 'package:flutter_recipeo/presentation/views/create_post/pages/create_post_first_page/components/food_description_input.dart';
-import 'package:flutter_recipeo/presentation/views/create_post/pages/create_post_first_page/components/food_name_input.dart';
-import 'package:flutter_recipeo/presentation/views/create_post/pages/create_post_first_page/components/food_name_label.dart';
-import 'package:flutter_recipeo/presentation/views/create_post/pages/create_post_first_page/components/food_type_selection/food_type_selection.dart';
-import 'package:flutter_recipeo/presentation/views/create_post/pages/create_post_first_page/components/post_image.dart';
+
+import '../../../../../constants/text_manager.dart';
+import '../../../../../constants/typography.dart';
+import 'components/duration_slider/duration_slider_container.dart';
+import 'components/food_description_input.dart';
+import 'components/food_name_input.dart';
+import 'components/food_name_label.dart';
+import 'components/food_type_selection/food_type_selection.dart';
+import 'components/post_image.dart';
 
 class CreatePostFirstPage extends StatelessWidget {
   const CreatePostFirstPage({

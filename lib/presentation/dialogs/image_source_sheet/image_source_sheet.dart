@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_recipeo/constants/colors.dart';
-import 'package:flutter_recipeo/constants/icons.dart';
-import 'package:flutter_recipeo/constants/text_manager.dart';
-import 'package:flutter_recipeo/constants/typography.dart';
-import 'package:flutter_recipeo/presentation/global/app_ink_well.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:image_picker/image_picker.dart';
+
+import '../../../constants/colors.dart';
+import '../../../constants/icons.dart';
+import '../../../constants/text_manager.dart';
+import '../../../constants/typography.dart';
+import '../../global/app_ink_well.dart';
 
 part 'parts/source.dart';
 part 'parts/top_row.dart';

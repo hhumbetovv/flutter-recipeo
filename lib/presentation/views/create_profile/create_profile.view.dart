@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_recipeo/constants/colors.dart';
-import 'package:flutter_recipeo/constants/routes.dart';
-import 'package:flutter_recipeo/constants/text_manager.dart';
-import 'package:flutter_recipeo/constants/typography.dart';
-import 'package:flutter_recipeo/data/services/user.service.dart';
-import 'package:flutter_recipeo/locator.dart';
-import 'package:flutter_recipeo/mixins/loading.state.dart';
-import 'package:flutter_recipeo/presentation/dialogs/app_snackbar.dart';
-import 'package:flutter_recipeo/presentation/dialogs/image_source_sheet/image_source_sheet.dart';
-import 'package:flutter_recipeo/presentation/global/buttons/primary_button/primary_button.dart';
-import 'package:flutter_recipeo/presentation/global/inputs/name_field.dart';
-import 'package:flutter_recipeo/presentation/views/create_profile/components/profile_picture.dart';
 import 'package:go_router/go_router.dart';
 import 'package:image_picker/image_picker.dart';
+
+import '../../../constants/colors.dart';
+import '../../../constants/routes.dart';
+import '../../../constants/text_manager.dart';
+import '../../../constants/typography.dart';
+import '../../../data/services/user.service.dart';
+import '../../../locator.dart';
+import '../../../mixins/loading.state.dart';
+import '../../dialogs/app_snackbar.dart';
+import '../../dialogs/image_source_sheet/image_source_sheet.dart';
+import '../../global/buttons/primary_button/primary_button.dart';
+import '../../global/inputs/name_field.dart';
+import 'components/profile_picture.dart';
 
 part 'create_profile.state.dart';
 

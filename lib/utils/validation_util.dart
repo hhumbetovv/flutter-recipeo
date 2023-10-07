@@ -1,4 +1,4 @@
-import 'package:flutter_recipeo/constants/field_error.dart';
+import '../constants/field_error.dart';
 
 sealed class ValidationUtil {
   static const String _emailPattern = r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+";

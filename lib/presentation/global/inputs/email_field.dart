@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_recipeo/constants/colors.dart';
-import 'package:flutter_recipeo/constants/field_error.dart';
-import 'package:flutter_recipeo/constants/icons.dart';
-import 'package:flutter_recipeo/constants/text_manager.dart';
-import 'package:flutter_recipeo/constants/typography.dart';
-import 'package:flutter_recipeo/presentation/global/inputs/base_decoration.dart';
-import 'package:flutter_recipeo/utils/validation_util.dart';
+
+import '../../../constants/colors.dart';
+import '../../../constants/field_error.dart';
+import '../../../constants/icons.dart';
+import '../../../constants/text_manager.dart';
+import '../../../constants/typography.dart';
+import '../../../utils/validation_util.dart';
+import 'base_decoration.dart';
 
 class EmailField extends StatelessWidget {
   const EmailField({

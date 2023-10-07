@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_recipeo/presentation/global/inputs/email_field.dart';
-import 'package:flutter_recipeo/presentation/global/inputs/password_field/password_field.dart';
+
+import '../../../global/inputs/email_field.dart';
+import '../../../global/inputs/password_field/password_field.dart';
 
 class LoginForm extends StatelessWidget {
   const LoginForm({

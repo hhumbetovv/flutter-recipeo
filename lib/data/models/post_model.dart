@@ -1,6 +1,7 @@
-import 'package:flutter_recipeo/constants/cooking_duration.dart';
-import 'package:flutter_recipeo/constants/food_type.dart';
 import 'package:json_annotation/json_annotation.dart';
+
+import '../../constants/cooking_duration.dart';
+import '../../constants/food_type.dart';
 
 part 'post_model.g.dart';
 

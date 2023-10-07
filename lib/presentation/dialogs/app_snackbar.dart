@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_recipeo/constants/colors.dart';
-import 'package:flutter_recipeo/constants/typography.dart';
+
+import '../../constants/colors.dart';
+import '../../constants/typography.dart';
 
 void showAppSnackBar(BuildContext context, String message) {
   ScaffoldMessenger.of(context).showSnackBar(

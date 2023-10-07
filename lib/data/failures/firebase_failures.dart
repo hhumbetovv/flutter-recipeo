@@ -1,4 +1,4 @@
-import 'package:flutter_recipeo/constants/text_manager.dart';
+import '../../constants/text_manager.dart';
 
 sealed class FirebaseFailures {
   static String getAuthFailure(String code) {

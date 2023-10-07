@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_recipeo/constants/text_manager.dart';
-import 'package:flutter_recipeo/presentation/global/buttons/primary_button/primary_button.dart';
-import 'package:flutter_recipeo/presentation/global/buttons/secondary_button/secondary_button.dart';
 import 'package:go_router/go_router.dart';
+
+import '../../../../../../constants/text_manager.dart';
+import '../../../../../global/buttons/primary_button/primary_button.dart';
+import '../../../../../global/buttons/secondary_button/secondary_button.dart';
 
 class BottomActionRow extends StatelessWidget {
   const BottomActionRow({

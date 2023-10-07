@@ -1,17 +1,18 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_recipeo/constants/colors.dart';
-import 'package:flutter_recipeo/constants/routes.dart';
-import 'package:flutter_recipeo/constants/text_manager.dart';
-import 'package:flutter_recipeo/constants/typography.dart';
-import 'package:flutter_recipeo/data/failures/firebase_failures.dart';
-import 'package:flutter_recipeo/data/services/auth.service.dart';
-import 'package:flutter_recipeo/locator.dart';
-import 'package:flutter_recipeo/mixins/loading.state.dart';
-import 'package:flutter_recipeo/presentation/dialogs/app_snackbar.dart';
-import 'package:flutter_recipeo/presentation/global/buttons/primary_button/primary_button.dart';
-import 'package:flutter_recipeo/presentation/views/register/components/register_form/register_form.dart';
 import 'package:go_router/go_router.dart';
+
+import '../../../constants/colors.dart';
+import '../../../constants/routes.dart';
+import '../../../constants/text_manager.dart';
+import '../../../constants/typography.dart';
+import '../../../data/failures/firebase_failures.dart';
+import '../../../data/services/auth.service.dart';
+import '../../../locator.dart';
+import '../../../mixins/loading.state.dart';
+import '../../dialogs/app_snackbar.dart';
+import '../../global/buttons/primary_button/primary_button.dart';
+import 'components/register_form/register_form.dart';
 
 part 'register.state.dart';
 

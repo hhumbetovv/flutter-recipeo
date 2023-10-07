@@ -1,9 +1,10 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_recipeo/constants/colors.dart';
-import 'package:flutter_recipeo/presentation/global/app_ink_well.dart';
 import 'package:image_picker/image_picker.dart';
+
+import '../../../../constants/colors.dart';
+import '../../../global/app_ink_well.dart';
 
 class ProfilePicture extends StatelessWidget {
   const ProfilePicture({

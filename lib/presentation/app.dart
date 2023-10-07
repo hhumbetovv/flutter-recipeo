@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_recipeo/constants/colors.dart';
 
+import '../constants/colors.dart';
 import '../constants/text_manager.dart';
 import 'router/app_router.dart';
 

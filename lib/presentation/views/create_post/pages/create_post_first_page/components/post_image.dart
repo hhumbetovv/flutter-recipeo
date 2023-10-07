@@ -2,16 +2,17 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_recipeo/constants/colors.dart';
-import 'package:flutter_recipeo/constants/icons.dart';
-import 'package:flutter_recipeo/constants/text_manager.dart';
-import 'package:flutter_recipeo/constants/typography.dart';
-import 'package:flutter_recipeo/presentation/dialogs/app_snackbar.dart';
-import 'package:flutter_recipeo/presentation/dialogs/image_source_sheet/image_source_sheet.dart';
-import 'package:flutter_recipeo/presentation/global/app_ink_well.dart';
-import 'package:flutter_recipeo/presentation/views/create_post/cubit/create_post_cubit.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:image_picker/image_picker.dart';
+
+import '../../../../../../constants/colors.dart';
+import '../../../../../../constants/icons.dart';
+import '../../../../../../constants/text_manager.dart';
+import '../../../../../../constants/typography.dart';
+import '../../../../../dialogs/app_snackbar.dart';
+import '../../../../../dialogs/image_source_sheet/image_source_sheet.dart';
+import '../../../../../global/app_ink_well.dart';
+import '../../../cubit/create_post_cubit.dart';
 
 class PostImage extends StatelessWidget {
   const PostImage({

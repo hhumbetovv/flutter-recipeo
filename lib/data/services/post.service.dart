@@ -1,12 +1,13 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter_recipeo/constants/cooking_duration.dart';
-import 'package:flutter_recipeo/constants/food_type.dart';
-import 'package:flutter_recipeo/data/models/post_model.dart';
-import 'package:flutter_recipeo/data/services/storage.service.dart';
-import 'package:flutter_recipeo/data/services/user.service.dart';
-import 'package:flutter_recipeo/locator.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:uuid/uuid.dart';
+
+import '../../constants/cooking_duration.dart';
+import '../../constants/food_type.dart';
+import '../../locator.dart';
+import '../models/post_model.dart';
+import 'storage.service.dart';
+import 'user.service.dart';
 
 class PostService {
   final CollectionReference _postsCollection = FirebaseFirestore.instance.collection('posts');

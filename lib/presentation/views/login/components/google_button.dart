@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_recipeo/constants/colors.dart';
-import 'package:flutter_recipeo/constants/icons.dart';
-import 'package:flutter_recipeo/constants/text_manager.dart';
-import 'package:flutter_recipeo/presentation/global/buttons/base_style.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
+import '../../../../constants/colors.dart';
+import '../../../../constants/icons.dart';
+import '../../../../constants/text_manager.dart';
+import '../../../global/buttons/base_style.dart';
 
 class GoogleButton extends StatelessWidget {
   const GoogleButton({

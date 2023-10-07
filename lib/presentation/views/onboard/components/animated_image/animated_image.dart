@@ -1,7 +1,8 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_recipeo/constants/images.dart';
+
+import '../../../../../constants/images.dart';
 
 part 'parts/orbit_avatar.dart';
 part 'parts/orbits.dart';

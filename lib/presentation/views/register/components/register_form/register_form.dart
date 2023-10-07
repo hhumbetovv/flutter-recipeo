@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_recipeo/constants/colors.dart';
-import 'package:flutter_recipeo/constants/icons.dart';
-import 'package:flutter_recipeo/constants/text_manager.dart';
-import 'package:flutter_recipeo/constants/typography.dart';
-import 'package:flutter_recipeo/presentation/global/inputs/email_field.dart';
-import 'package:flutter_recipeo/presentation/global/inputs/password_field/password_field.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
+import '../../../../../constants/colors.dart';
+import '../../../../../constants/icons.dart';
+import '../../../../../constants/text_manager.dart';
+import '../../../../../constants/typography.dart';
+import '../../../../global/inputs/email_field.dart';
+import '../../../../global/inputs/password_field/password_field.dart';
 
 part 'parts/password_condition.dart';
 

@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_recipeo/presentation/views/create_post/components/action_row.dart';
-import 'package:flutter_recipeo/presentation/views/create_post/components/bottom_action_row/bottom_action_row.dart';
-import 'package:flutter_recipeo/presentation/views/create_post/cubit/create_post_cubit.dart';
-import 'package:flutter_recipeo/presentation/views/create_post/pages/create_post_first_page/create_post_first_page.dart';
-import 'package:flutter_recipeo/presentation/views/create_post/pages/create_post_second_page/create_post_second_page.dart';
+
+import 'components/action_row.dart';
+import 'components/bottom_action_row/bottom_action_row.dart';
+import 'cubit/create_post_cubit.dart';
+import 'pages/create_post_first_page/create_post_first_page.dart';
+import 'pages/create_post_second_page/create_post_second_page.dart';
 
 part 'create_post.state.dart';
 

@@ -1,11 +1,12 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_recipeo/constants/cooking_duration.dart';
-import 'package:flutter_recipeo/constants/food_type.dart';
-import 'package:flutter_recipeo/data/models/reordable_element_model.dart';
-import 'package:flutter_recipeo/data/services/post.service.dart';
-import 'package:flutter_recipeo/locator.dart';
 import 'package:image_picker/image_picker.dart';
+
+import '../../../../constants/cooking_duration.dart';
+import '../../../../constants/food_type.dart';
+import '../../../../data/models/reordable_element_model.dart';
+import '../../../../data/services/post.service.dart';
+import '../../../../locator.dart';
 
 part 'create_post_state.dart';
 

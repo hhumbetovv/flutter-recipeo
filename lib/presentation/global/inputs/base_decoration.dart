@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_recipeo/constants/colors.dart';
-import 'package:flutter_recipeo/constants/typography.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
+import '../../../constants/colors.dart';
+import '../../../constants/typography.dart';
 
 class BaseInputDecoration extends InputDecoration {
   static OutlineInputBorder _inputBorder(Color color, [double? width]) {

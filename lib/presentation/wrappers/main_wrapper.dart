@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_recipeo/constants/colors.dart';
-import 'package:flutter_recipeo/constants/icons.dart';
-import 'package:flutter_recipeo/constants/routes.dart';
-import 'package:flutter_recipeo/constants/text_manager.dart';
-import 'package:flutter_recipeo/constants/typography.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
+
+import '../../constants/colors.dart';
+import '../../constants/icons.dart';
+import '../../constants/routes.dart';
+import '../../constants/text_manager.dart';
+import '../../constants/typography.dart';
 
 class MainWrapper extends StatelessWidget {
   const MainWrapper({

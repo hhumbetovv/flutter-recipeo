@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_recipeo/constants/colors.dart';
-import 'package:flutter_recipeo/constants/text_manager.dart';
-import 'package:flutter_recipeo/constants/typography.dart';
-import 'package:flutter_recipeo/presentation/global/inputs/base_decoration.dart';
+
+import '../../../constants/colors.dart';
+import '../../../constants/text_manager.dart';
+import '../../../constants/typography.dart';
+import 'base_decoration.dart';
 
 class NameField extends StatelessWidget {
   const NameField({
