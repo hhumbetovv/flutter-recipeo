@@ -58,4 +58,6 @@ sealed class TextManager {
   static const String uploadSuccess = 'Upload Success';
   static const String uploadSuccessInfo = 'Your recipe has been uploaded, you can see it on your profile';
   static const String goToProfile = 'Go to Profile';
+  static const String recipes = 'Recipes';
+  static const String liked = 'Liked';
 }

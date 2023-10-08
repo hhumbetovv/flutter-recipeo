@@ -25,6 +25,8 @@ class UserService {
           displayName: displayName,
           image: imageUrl,
           posts: [],
+          followers: [],
+          following: [],
         );
         await _usersCollection.doc(user.uid).set(user.toJson());
       } else {

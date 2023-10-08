@@ -9,6 +9,7 @@ enum AppIcons {
   camera('camera'),
   add('add'),
   drag('drag'),
+  arrowLeft('arrow-left'),
   message('message');
 
   const AppIcons(this._name);
