@@ -24,7 +24,8 @@ class UserService {
           uid: uid,
           displayName: displayName,
           image: imageUrl,
-          posts: [],
+          recipes: [],
+          liked: [],
           followers: [],
           following: [],
         );
@@ -45,9 +46,15 @@ class UserService {
     }
   }
 
-  Future<UserModel> getUser({required String uid}) async {
+  Future<UserModel> getUser({required String? uid}) async {
     try {
-      final DocumentSnapshot snapshot = await _usersCollection.doc(uid).get();
+      late final String? userId;
+      if (uid != null && uid.isNotEmpty) {
+        userId = uid;
+      } else {
+        userId = _authService.currentUserId;
+      }
+      final DocumentSnapshot snapshot = await _usersCollection.doc(userId).get();
       final UserModel user = UserModel.fromJson(snapshot.data() as Map<String, dynamic>);
       return user;
     } catch (e) {

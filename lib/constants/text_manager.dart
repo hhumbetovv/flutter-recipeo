@@ -60,4 +60,6 @@ sealed class TextManager {
   static const String goToProfile = 'Go to Profile';
   static const String recipes = 'Recipes';
   static const String liked = 'Liked';
+  static const String followers = 'Followers';
+  static const String following = 'Following';
 }

@@ -26,9 +26,7 @@ void showUploadPostDialog(BuildContext context) {
           builder: (context, state) {
             if (state) {
               return const Center(
-                child: CircularProgressIndicator(
-                  color: AppColors.primary,
-                ),
+                child: CircularProgressIndicator(),
               );
             }
             return Dialog(

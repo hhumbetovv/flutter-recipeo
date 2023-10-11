@@ -3,24 +3,31 @@ part of '../profile_info.dart';
 class _InfoRow extends StatelessWidget {
   const _InfoRow({
     Key? key,
+    required this.recipes,
+    required this.following,
+    required this.followers,
   }) : super(key: key);
+
+  final int recipes;
+  final List<String> following;
+  final List<String> followers;
 
   @override
   Widget build(BuildContext context) {
-    return const Row(
+    return Row(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         _Info(
-          label: 'Recipes',
-          value: '32',
+          label: TextManager.recipes,
+          value: '$recipes',
         ),
         _Info(
-          label: 'Following',
-          value: '787',
+          label: TextManager.following,
+          value: '${following.length}',
         ),
         _Info(
-          label: 'Followers',
-          value: '1.278',
+          label: TextManager.followers,
+          value: '${followers.length}',
         ),
       ],
     );

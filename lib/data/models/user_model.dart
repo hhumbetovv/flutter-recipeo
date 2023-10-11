@@ -4,15 +4,16 @@ part 'user_model.g.dart';
 
 @JsonSerializable()
 class UserModel {
-  final String uid;
-  final String? displayName, image;
-  final List<String> posts, followers, following;
+  final String uid, displayName;
+  final String? image;
+  final List<String> recipes, liked, followers, following;
 
   UserModel({
     required this.uid,
-    this.displayName,
+    required this.displayName,
     this.image,
-    required this.posts,
+    required this.recipes,
+    required this.liked,
     required this.followers,
     required this.following,
   });
@@ -25,7 +26,8 @@ class UserModel {
       uid: uid,
       displayName: displayName,
       image: image,
-      posts: [...posts, id],
+      recipes: [...recipes, id],
+      liked: liked,
       followers: followers,
       following: following,
     );

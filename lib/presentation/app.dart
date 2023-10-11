@@ -23,6 +23,9 @@ class RecipeoApp extends StatelessWidget {
           backgroundColor: AppColors.white,
           elevation: 0,
         ),
+        progressIndicatorTheme: const ProgressIndicatorThemeData(
+          color: AppColors.primary,
+        ),
         fontFamily: 'Inter',
         splashFactory: InkSparkle.splashFactory,
         scaffoldBackgroundColor: AppColors.white,
