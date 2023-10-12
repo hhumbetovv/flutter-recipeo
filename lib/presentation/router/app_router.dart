@@ -43,6 +43,13 @@ class AppRouter {
       StatefulShellRoute.indexedStack(
         parentNavigatorKey: _rootNavigatorKey,
         builder: (context, state, navigationShell) => MainWrapper(navigationShell: navigationShell),
+        pageBuilder: (context, state, navigationShell) {
+          return CupertinoTransition(
+            MainWrapper(
+              navigationShell: navigationShell,
+            ),
+          );
+        },
         branches: [
           HomeBranch(),
           ProfileBranch(),

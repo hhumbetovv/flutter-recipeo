@@ -11,9 +11,11 @@ class ProfileTabs extends StatelessWidget {
     Key? key,
     required this.recipes,
     required this.liked,
+    required this.isLoading,
   }) : super(key: key);
 
   final List<String> recipes, liked;
+  final bool isLoading;
 
   @override
   Widget build(BuildContext context) {

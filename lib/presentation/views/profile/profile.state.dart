@@ -1,7 +1,7 @@
 part of 'profile.view.dart';
 
 sealed class _ProfileState extends State<ProfileView> with LoadingState {
-  late final UserModel user;
+  late UserModel user;
 
   @override
   void initState() {

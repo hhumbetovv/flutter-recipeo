@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_recipeo/constants/colors.dart';
 import 'package:flutter_recipeo/data/models/user_model.dart';
 import 'package:flutter_recipeo/data/services/user.service.dart';
 import 'package:flutter_recipeo/locator.dart';
@@ -27,22 +28,31 @@ class _ProfileViewState extends _ProfileState {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: isLoading
-            ? const Center(child: CircularProgressIndicator())
-            : DefaultTabController(
-                length: 2,
-                child: CustomScrollView(
-                  physics: const BouncingScrollPhysics(),
-                  slivers: [
-                    const ProfileAppBar(),
-                    ProfileInfo(user: user),
-                    ProfileTabs(
-                      recipes: user.recipes,
-                      liked: user.liked,
-                    ),
-                  ],
+        body: DefaultTabController(
+          length: 2,
+          child: RefreshIndicator(
+            onRefresh: () async {
+              return getUserModel();
+            },
+            color: AppColors.main,
+            triggerMode: RefreshIndicatorTriggerMode.anywhere,
+            child: CustomScrollView(
+              physics: const BouncingScrollPhysics(),
+              slivers: [
+                const ProfileAppBar(),
+                ProfileInfo(
+                  user: user,
+                  isLoading: isLoading,
                 ),
-              ),
+                ProfileTabs(
+                  recipes: user.recipes,
+                  liked: user.liked,
+                  isLoading: isLoading,
+                ),
+              ],
+            ),
+          ),
+        ),
       ),
     );
   }

@@ -9,8 +9,7 @@ class _InfoRow extends StatelessWidget {
   }) : super(key: key);
 
   final int recipes;
-  final List<String> following;
-  final List<String> followers;
+  final List<String> following, followers;
 
   @override
   Widget build(BuildContext context) {

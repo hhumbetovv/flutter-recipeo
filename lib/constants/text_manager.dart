@@ -62,4 +62,5 @@ sealed class TextManager {
   static const String liked = 'Liked';
   static const String followers = 'Followers';
   static const String following = 'Following';
+  static const String unknown = 'Unknown';
 }

@@ -14,9 +14,11 @@ class ProfileInfo extends StatelessWidget {
   const ProfileInfo({
     Key? key,
     required this.user,
+    required this.isLoading,
   }) : super(key: key);
 
   final UserModel user;
+  final bool isLoading;
 
   @override
   Widget build(BuildContext context) {
