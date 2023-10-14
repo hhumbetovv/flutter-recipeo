@@ -17,9 +17,9 @@ class StorageService {
     }
   }
 
-  Future<String> uploadPostImage({required String id, required XFile image}) async {
+  Future<String> uploadRecipeImage({required String id, required XFile image}) async {
     try {
-      final String imagePath = 'posts/$id.${image.path.split(".").last}';
+      final String imagePath = 'recipes/$id.${image.path.split(".").last}';
       final TaskSnapshot snapshot = await _storage.ref().child(imagePath).putFile(File(image.path));
       final String url = await snapshot.ref.getDownloadURL();
       return url;

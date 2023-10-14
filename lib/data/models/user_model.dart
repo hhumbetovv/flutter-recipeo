@@ -22,7 +22,7 @@ class UserModel {
 
   factory UserModel.fromJson(Map<String, dynamic> json) => _$UserModelFromJson(json);
 
-  UserModel copyWithNewPost({required String id}) {
+  UserModel copyWithNewRecipe({required String id}) {
     return UserModel(
       uid: uid,
       displayName: displayName,

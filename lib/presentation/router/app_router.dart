@@ -2,12 +2,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../constants/routes.dart';
-import '../views/create_post/create_post.view.dart';
 import '../views/create_profile/create_profile.view.dart';
 import '../views/login/login.view.dart';
 import '../views/onboard/onboard.view.dart';
 import '../views/register/register.view.dart';
 import '../views/splash/splash.view.dart';
+import '../views/upload_recipe/upload_recipe.view.dart';
 import '../wrappers/main_wrapper.dart';
 import 'branches/home_branch.dart';
 import 'branches/profile_branch.dart';
@@ -57,8 +57,8 @@ class AppRouter {
       ),
       GoRoute(
         parentNavigatorKey: _rootNavigatorKey,
-        path: Routes.createPost,
-        pageBuilder: (context, state) => DownToUpTransition(const CreatePostView()),
+        path: Routes.uploadRecipe,
+        pageBuilder: (context, state) => DownToUpTransition(const UploadRecipeView()),
       ),
     ],
   );

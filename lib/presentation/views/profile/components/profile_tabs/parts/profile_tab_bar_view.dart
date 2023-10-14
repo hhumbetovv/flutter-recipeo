@@ -5,18 +5,20 @@ class _ProfileTabBarView extends StatelessWidget {
     Key? key,
     required this.recipes,
     required this.liked,
+    required this.profileIsLoading,
   }) : super(key: key);
 
   final List<String> recipes, liked;
+  final bool profileIsLoading;
 
   @override
   Widget build(BuildContext context) {
-    return const Expanded(
+    return Expanded(
       child: TabBarView(
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         children: <Widget>[
-          Center(child: Text('Recipes')),
-          Center(child: Text('Liked')),
+          RecipeList(recipes: profileIsLoading ? [null, null, null, null, null, null] : recipes),
+          RecipeList(recipes: profileIsLoading ? [null, null, null, null, null, null] : liked),
         ],
       ),
     );

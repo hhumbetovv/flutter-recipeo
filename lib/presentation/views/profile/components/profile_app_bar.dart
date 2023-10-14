@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_recipeo/constants/colors.dart';
-import 'package:flutter_recipeo/constants/routes.dart';
-import 'package:flutter_recipeo/data/services/auth.service.dart';
-import 'package:flutter_recipeo/locator.dart';
-import 'package:flutter_recipeo/presentation/dialogs/app_snackbar.dart';
-import 'package:flutter_recipeo/presentation/global/app_ink_well.dart';
 import 'package:go_router/go_router.dart';
+
+import '../../../../constants/colors.dart';
+import '../../../../constants/routes.dart';
+import '../../../../data/services/auth.service.dart';
+import '../../../../locator.dart';
+import '../../../dialogs/app_snackbar.dart';
+import '../../../global/app_ink_well.dart';
 
 class ProfileAppBar extends StatelessWidget {
   const ProfileAppBar({

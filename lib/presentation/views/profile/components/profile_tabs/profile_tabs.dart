@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_recipeo/constants/colors.dart';
-import 'package:flutter_recipeo/constants/text_manager.dart';
-import 'package:flutter_recipeo/constants/typography.dart';
+
+import '../../../../../constants/colors.dart';
+import '../../../../../constants/text_manager.dart';
+import '../../../../../constants/typography.dart';
+import '../../../../global/recipe_list.dart';
 
 part 'parts/profile_tab_bar.dart';
 part 'parts/profile_tab_bar_view.dart';
@@ -11,11 +13,11 @@ class ProfileTabs extends StatelessWidget {
     Key? key,
     required this.recipes,
     required this.liked,
-    required this.isLoading,
+    required this.profileLoading,
   }) : super(key: key);
 
   final List<String> recipes, liked;
-  final bool isLoading;
+  final bool profileLoading;
 
   @override
   Widget build(BuildContext context) {
@@ -27,6 +29,7 @@ class ProfileTabs extends StatelessWidget {
           _ProfileTabBarView(
             recipes: recipes,
             liked: liked,
+            profileIsLoading: profileLoading,
           ),
         ],
       ),

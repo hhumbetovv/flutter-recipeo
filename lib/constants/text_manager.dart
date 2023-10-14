@@ -42,7 +42,7 @@ sealed class TextManager {
   static const String drinkDescriptionHint = 'Tell a little about your drink';
   static const String cookingDuration = 'Cooking Duration';
   static const String inMinutes = '(in minutes)';
-  static const String postImageError = 'Image field can\'t be empty';
+  static const String recipeImageError = 'Image field can\'t be empty';
   static const String foodNameError = 'Food name can\'t be empty';
   static const String drinkNameError = 'Drink name can\'t be empty';
   static const String food = 'Food';

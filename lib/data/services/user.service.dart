@@ -90,12 +90,12 @@ class UserService {
     }
   }
 
-  Future<void> addPost({required String postId}) async {
+  Future<void> addRecipe({required String recipeId}) async {
     final String? uid = _authService.currentUserId;
     try {
       if (uid != null) {
         UserModel user = await getCurrentUser();
-        await updateUser(user: user.copyWithNewPost(id: postId));
+        await updateUser(user: user.copyWithNewRecipe(id: recipeId));
       }
     } catch (e) {
       rethrow;

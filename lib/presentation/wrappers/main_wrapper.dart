@@ -24,7 +24,7 @@ class MainWrapper extends StatelessWidget {
         backgroundColor: AppColors.primary,
         elevation: 0,
         onPressed: () {
-          context.push(Routes.createPost);
+          context.push(Routes.uploadRecipe);
         },
         highlightElevation: 0,
         child: const Icon(

@@ -21,7 +21,7 @@ class AppInkWell extends StatelessWidget {
     return onTap == null
         ? child
         : Stack(
-            clipBehavior: Clip.antiAlias,
+            clipBehavior: Clip.hardEdge,
             alignment: Alignment.center,
             fit: StackFit.passthrough,
             children: [
