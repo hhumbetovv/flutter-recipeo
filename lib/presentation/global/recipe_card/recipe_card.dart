@@ -1,5 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_recipeo/constants/routes.dart';
+import 'package:go_router/go_router.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
 import '../../../constants/colors.dart';
@@ -54,7 +56,7 @@ class _RecipeCardState extends State<RecipeCard> with LoadingState {
   @override
   Widget build(BuildContext context) {
     return AppInkWell(
-      onTap: () {},
+      onTap: recipe == null ? null : () => context.push(Routes.recipeDetails, extra: recipe?.toJson()),
       child: Skeletonizer(
         enabled: widget.recipeId == null ? false : isLoading,
         child: Column(

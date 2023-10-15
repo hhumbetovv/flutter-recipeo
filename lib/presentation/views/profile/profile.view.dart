@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:skeletonizer/skeletonizer.dart';
 
 import '../../../constants/colors.dart';
 import '../../../data/models/user_model.dart';
@@ -38,21 +37,18 @@ class _ProfileViewState extends _ProfileState {
             },
             color: AppColors.main,
             triggerMode: RefreshIndicatorTriggerMode.anywhere,
-            child: Skeletonizer(
-              enabled: isLoading,
-              ignoreContainers: false,
-              child: CustomScrollView(
-                physics: const BouncingScrollPhysics(),
-                slivers: [
-                  const ProfileAppBar(),
-                  ProfileInfo(user: user),
-                  ProfileTabs(
-                    recipes: user?.recipes ?? [],
-                    liked: user?.liked ?? [],
-                    profileLoading: isLoading,
-                  ),
-                ],
-              ),
+            child: CustomScrollView(
+              physics: const BouncingScrollPhysics(),
+              slivers: [
+                ProfileAppBar(isLoading: isLoading),
+                ProfileInfo(user: user, isLoading: isLoading),
+                ProfileTabs(
+                  recipes: user?.recipes ?? [],
+                  liked: user?.liked ?? [],
+                  profileLoading: isLoading,
+                  isLoading: isLoading,
+                ),
+              ],
             ),
           ),
         ),

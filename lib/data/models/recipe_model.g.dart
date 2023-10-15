@@ -8,6 +8,7 @@ part of 'recipe_model.dart';
 
 RecipeModel _$RecipeModelFromJson(Map<String, dynamic> json) => RecipeModel(
       id: json['id'] as String,
+      authorId: json['authorId'] as String,
       foodName: json['foodName'] as String,
       foodDescription: json['foodDescription'] as String,
       image: json['image'] as String,
@@ -17,11 +18,13 @@ RecipeModel _$RecipeModelFromJson(Map<String, dynamic> json) => RecipeModel(
           .map((e) => e as String)
           .toList(),
       steps: (json['steps'] as List<dynamic>).map((e) => e as String).toList(),
+      likes: json['likes'] as int,
     );
 
 Map<String, dynamic> _$RecipeModelToJson(RecipeModel instance) =>
     <String, dynamic>{
       'id': instance.id,
+      'authorId': instance.authorId,
       'foodName': instance.foodName,
       'foodDescription': instance.foodDescription,
       'image': instance.image,
@@ -29,6 +32,7 @@ Map<String, dynamic> _$RecipeModelToJson(RecipeModel instance) =>
       'duration': _$CookingDurationEnumMap[instance.duration]!,
       'ingredients': instance.ingredients,
       'steps': instance.steps,
+      'likes': instance.likes,
     };
 
 const _$FoodTypeEnumMap = {

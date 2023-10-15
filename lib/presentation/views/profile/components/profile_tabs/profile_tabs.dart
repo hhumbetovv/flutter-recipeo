@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:skeletonizer/skeletonizer.dart';
 
 import '../../../../../constants/colors.dart';
 import '../../../../../constants/text_manager.dart';
@@ -14,24 +15,29 @@ class ProfileTabs extends StatelessWidget {
     required this.recipes,
     required this.liked,
     required this.profileLoading,
+    required this.isLoading,
   }) : super(key: key);
 
   final List<String> recipes, liked;
   final bool profileLoading;
+  final bool isLoading;
 
   @override
   Widget build(BuildContext context) {
-    return SliverFillRemaining(
-      child: Column(
-        children: [
-          const SizedBox(height: kToolbarHeight),
-          const _ProfileTabBar(),
-          _ProfileTabBarView(
-            recipes: recipes,
-            liked: liked,
-            profileIsLoading: profileLoading,
-          ),
-        ],
+    return Skeletonizer.sliver(
+      enabled: isLoading,
+      child: SliverFillRemaining(
+        child: Column(
+          children: [
+            const SizedBox(height: kToolbarHeight),
+            const _ProfileTabBar(),
+            _ProfileTabBarView(
+              recipes: recipes,
+              liked: liked,
+              profileIsLoading: profileLoading,
+            ),
+          ],
+        ),
       ),
     );
   }

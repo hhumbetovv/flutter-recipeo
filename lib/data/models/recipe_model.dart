@@ -8,13 +8,15 @@ part 'recipe_model.g.dart';
 
 @JsonSerializable()
 class RecipeModel {
-  final String id, foodName, foodDescription, image;
+  final String id, authorId, foodName, foodDescription, image;
   final FoodType type;
   final CookingDuration duration;
   final List<String> ingredients, steps;
+  final int likes;
 
   RecipeModel({
     required this.id,
+    required this.authorId,
     required this.foodName,
     required this.foodDescription,
     required this.image,
@@ -22,6 +24,7 @@ class RecipeModel {
     required this.duration,
     required this.ingredients,
     required this.steps,
+    required this.likes,
   });
   Map<String, dynamic> toJson() => _$RecipeModelToJson(this);
 

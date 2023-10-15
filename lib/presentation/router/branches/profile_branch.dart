@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_recipeo/data/models/recipe_model.dart';
+import 'package:flutter_recipeo/presentation/views/recipe_details/recipe_details.view.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../constants/routes.dart';
@@ -14,6 +16,14 @@ class ProfileBranch extends StatefulShellBranch {
             GoRoute(
               path: Routes.profile,
               pageBuilder: (context, state) => CupertinoTransition(const ProfileView()),
+            ),
+            GoRoute(
+              path: Routes.recipeDetails,
+              pageBuilder: (context, state) {
+                return CupertinoTransition(RecipeDetailsView(
+                  recipe: RecipeModel.fromJson(state.extra as Map<String, dynamic>),
+                ));
+              },
             ),
           ],
         );

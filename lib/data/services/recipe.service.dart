@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter_recipeo/data/services/auth.service.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:uuid/uuid.dart';
 
@@ -13,6 +14,7 @@ class RecipeService {
   final CollectionReference _recipeCollection = FirebaseFirestore.instance.collection('recipes');
   final StorageService _storageService = locator<StorageService>();
   final UserService _userService = locator<UserService>();
+  final AuthService _authService = locator<AuthService>();
 
   Future<void> createRecipe({
     required String foodName,
@@ -31,6 +33,7 @@ class RecipeService {
       );
       final RecipeModel recipe = RecipeModel(
         id: id,
+        authorId: _authService.currentUserId!,
         foodName: foodName,
         foodDescription: foodDescription,
         image: imageUrl,
@@ -38,6 +41,7 @@ class RecipeService {
         duration: duration,
         ingredients: ingredients,
         steps: steps,
+        likes: 0,
       );
       await _recipeCollection.doc(id).set(recipe.toJson());
       await _userService.addRecipe(recipeId: id);
