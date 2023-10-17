@@ -1,26 +1,25 @@
 part of 'recipe_details.view.dart';
 
-sealed class _RecipeDetailsState extends State<RecipeDetailsView> with AutomaticKeepAliveClientMixin {
-  late final DraggableScrollableController controller;
-  final ValueNotifier<double?> dragSize = ValueNotifier(null);
-
+sealed class _RecipeDetailsState extends State<RecipeDetailsView> with AutomaticKeepAliveClientMixin, LoadingState {
+  UserModel? author;
   @override
   bool get wantKeepAlive => true;
 
   @override
   void initState() {
     super.initState();
-    ValueNotifier(null);
-    controller = DraggableScrollableController()
-      ..addListener(() {
-        dragSize.value = controller.size;
-      });
+    getUserModel();
   }
 
-  @override
-  void dispose() {
-    controller.dispose();
-    dragSize.dispose();
-    super.dispose();
+  Future<void> getUserModel() async {
+    toggleLoading();
+    try {
+      await Future.delayed(const Duration(seconds: 3));
+      final UserService userService = locator<UserService>();
+      author = await userService.getUser(uid: widget.recipe.authorId);
+    } catch (e) {
+      if (context.mounted) showAppSnackBar(context, e.toString());
+    }
+    toggleLoading();
   }
 }

@@ -18,7 +18,12 @@ class _RecipeImage extends StatelessWidget {
         child: Skeleton.shade(
           child: ColoredBox(
             color: AppColors.white,
-            child: image != null ? CachedNetworkImage(imageUrl: image!) : null,
+            child: image != null
+                ? CachedNetworkImage(
+                    imageUrl: image!,
+                    fit: BoxFit.cover,
+                  )
+                : null,
           ),
         ),
       ),

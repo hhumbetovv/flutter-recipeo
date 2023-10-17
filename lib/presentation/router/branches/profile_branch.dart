@@ -15,7 +15,7 @@ class ProfileBranch extends StatefulShellBranch {
           routes: [
             GoRoute(
               path: Routes.profile,
-              pageBuilder: (context, state) => CupertinoTransition(const ProfileView()),
+              pageBuilder: (context, state) => CupertinoTransition(ProfileView(uid: state.extra as String?)),
             ),
             GoRoute(
               path: Routes.recipeDetails,

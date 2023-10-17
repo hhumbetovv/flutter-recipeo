@@ -10,6 +10,7 @@ enum AppIcons {
   add('add'),
   drag('drag'),
   arrowLeft('arrow-left'),
+  heartFilled('heart-filled'),
   message('message');
 
   const AppIcons(this._name);
